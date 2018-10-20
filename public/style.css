@@ -1,53 +1,92 @@
-/****** Main Styling ******/
+/* styles */
+/* called by your view template */
+
+/* You might want to try something fancier: */
+/* less: http://lesscss.org/ */
+
+* {
+  box-sizing: border-box;
+  
+}
 
 body {
-	font-family: 'Roboto', sans-serif;
-	font-size: 16px;
-	color: #222;
-	background-color: #FaFaFa;
-	text-align: center;
-	line-height: 1.4em;
+  font-family: helvetica, arial, sans-serif;
+  margin-left: 250px;
+  background: url("https://res.cloudinary.com/dk4vuo0ku/image/upload/v1539803475/stamp_yqjr25.jpg");
+  background-color: 			#ECDAC6;
+  background-position: top center; 
+  background-size: 75%;
+  background-repeat: no-repeat;
 }
 
-.container {
-	padding: 0;
-	margin-top: 40px;
+h1 {
+  font-weight: bold;
+  color: 	#391481;
 }
 
-h3 {
-  margin-top: 30px;
+.bold {
+  font-weight: bold;
 }
 
-.footer {
-	margin-top: 40px;
+.border {
+  color: #391481;
+  border-style: solid;
+  border-width: 2px;
+  width: 340px;
+  margin-bottom: 25px;
+  padding: 15px;
+  border-radius: 3px;
 }
 
-.user-stories {
-  position: relative;
-  text-align: justify;
-  max-width: 700px;
-  margin: 15px auto;
+
+p {
+  max-width: 600px;
 }
-code {
-  font-family: monospace;
-  padding: 2px;
-  color: black;
-  background-color: #fff;
+
+form {
+  margin-bottom: 25px;
+  padding: 15px;
+  background-color: #998B98;
+  display: inline-block;
+  width: 100%;
+  max-width: 340px;
+  border-radius: 3px;
 }
-ol {
-	list-style-position: outside;
+
+input {
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 100%;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  font-size: 16px;
 }
-ul {
-	list-style-type: none;
+
+button {
+  font-size: 16px;
+  border-radius: 3px;
+  background-color: lightgrey;
+  border: 1px solid grey;
+  box-shadow: 2px 2px teal;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: yellow;
+}
+
+button:active {
+  box-shadow: none;
 }
 
 li {
-  margin-bottom: 0.5em;
-}
-.user-stories li {
-  margin-bottom: 1em;
+  margin-bottom: 5px;
 }
 
-a {
-	color: #2574A9;
+
+
+
+.nicejob {
+  text-decoration: line-through;
 }

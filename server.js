@@ -13,6 +13,21 @@ app.use(cors({optionSuccessStatus: 200}));  // some legacy browsers choke on 204
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
 
+app.get("/:timeEquiv", function (req, res) {
+  let parseTime,returnObject
+  
+  parseTime = Number(req.params.timeEquiv) ? Number(req.params.timeEquiv) : Date.parse(req.params.timeEquiv)
+  let naturalTime = new Date(parseTime)
+
+  if(parseTime && naturalTime!="Invalid Date") {
+    
+    returnObject = {"date":naturalTime.toDateString(), "unix":parseTime.toString()}
+  } else {
+    returnObject = {"date":null, "unix":null}
+  }
+  res.send(returnObject);
+});
+
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function (req, res) {
   res.sendFile(__dirname + '/views/index.html');
@@ -23,6 +38,10 @@ app.get("/", function (req, res) {
 app.get("/api/hello", function (req, res) {
   res.json({greeting: 'hello API'});
 });
+
+app.use(function (err, req, res, next) {
+  res.send({"unix":null,"date":null,"error":err.message})
+})
 
 
 
