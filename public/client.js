@@ -21,6 +21,6 @@ $("#submitDate").submit(function (i) {
   var convertInput = (!$("#inputDate").val()) ? $("#inputDate").attr("placeholder") : $("#inputDate").val()
   var tar = window.open(window.location.href+convertInput, "_blank");
   tar.focus();
-  
+ 
   });
  
