@@ -19,8 +19,19 @@ $(document).ready(function() {
 $("#submitDate").submit(function (i) {
   i.preventDefault();
   var convertInput = (!$("#inputDate").val()) ? $("#inputDate").attr("placeholder") : $("#inputDate").val()
-  var tar = window.open(window.location.href+convertInput, "_blank");
-  tar.focus();
+ // var tar = window.open(window.location.href+convertInput, "_blank");
+ // tar.focus();
   
   });
  
+function func(){
+    event.preventDefault();
+    var newValue = $('#inputDate').val();
+    $.ajax({
+        type: 'POST',
+        data: {"date":naturalTime.toDateString(), "unix":parseTime.toString()},
+        datatype: 'JSON',
+        success: function(data){},
+        error: function(){},
+    });
+}
