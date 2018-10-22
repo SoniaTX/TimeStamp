@@ -16,8 +16,6 @@ $(document).ready(function() {
   
   });
 
-
-
 $("#submitDate").submit(async function(i) {
   i.preventDefault();
   var convertInput = (!$("#inputDate").val()) ? $("#inputDate").attr("placeholder") : $("#inputDate").val()
