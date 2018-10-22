@@ -16,11 +16,19 @@ $(document).ready(function() {
   
   });
 
-$("#submitDate").submit(function (i) {
+let submit = function(data) {
+    const response = await fetch(url);
+    // data object containing data payload
+    const data = await response.json();
+    $(".borderBox").innerText = JSON.stringify(data); // or whatever data you need from the data object
+}
+
+$("#submitDate").submit(function(i) {
   i.preventDefault();
   var convertInput = (!$("#inputDate").val()) ? $("#inputDate").attr("placeholder") : $("#inputDate").val()
-  var tar = window.open(window.location.href+convertInput, "_blank");
-  tar.focus();
+  const response = await fetch(window.location.href + convertInput);
+  const data = await response.json();
+  document.getElementsByClassName('borderBox')[0].innerText = JSON.stringify(data);
+});
  
-  });
- 
+
