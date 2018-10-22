@@ -16,12 +16,7 @@ $(document).ready(function() {
   
   });
 
-let submit = function(data) {
-    const response = await fetch(url);
-    // data object containing data payload
-    const data = await response.json();
-    $(".borderBox").innerText = JSON.stringify(data); // or whatever data you need from the data object
-}
+
 
 $("#submitDate").submit(function(i) {
   i.preventDefault();
