@@ -21,7 +21,7 @@ app.get("/:timeEquiv", function (req, res) {
 
   if(parseTime && naturalTime!="Invalid Date") {
     
-    returnObject = { "date" :  naturalTime.toDateString()}
+    returnObject = { "date" :  naturalTime.toDateString(),  "unix" : parseTime.toString()}
   } else {
     returnObject = {"date":null, "unix":null}
   }
