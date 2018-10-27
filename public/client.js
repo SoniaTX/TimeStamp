@@ -16,8 +16,8 @@ $(document).ready(function() {
   
   });
 
-$("#submitDate").submit(async function(i) {
-  i.preventDefault();
+$("#submitDate").submit(async function(event) {
+  event.preventDefault();
   var convertInput = (!$("#inputDate").val()) ? $("#inputDate").attr("placeholder") : $("#inputDate").val()
   const response = await fetch(window.location.href + convertInput);
   const data = await response.json();
